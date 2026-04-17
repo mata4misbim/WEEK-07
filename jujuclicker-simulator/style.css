@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Sekuya&display=swap");
+
+* {
+  font-family: "Sekuya", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-shadow: 0 0 10px #00d4ff;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+}
+
+.button-click button {
+  background: none !important;
+  border: none !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button-click:hover {
+  transform: scale(1.1);
+}
+
+.button-click {
+  transition: transform 0.2s ease;
+  border: none;
+  background: none;
+}
+
+@keyframes click-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-click:active {
+  animation: click-pop 0.9s ease-out;
+}
+
+.Cursed-Display {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 8px solid #00d4ff;
+  display: inline-block;
+  min-width: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#Cursed-Energy,
+#Cursed-Pet {
+  padding: 10px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#Cursed-Energy {
+  font-size: 1rem;
+  color: #fff;
+  text-shadow:
+    0 0 10px #00d4ff,
+    0 0 20px #00d4ff;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+#Cursed-Pet {
+  font-size: 1rem;
+  color: #b166ff;
+  text-shadow: 0 0 8px #b166ff;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+#Cursed-Energy::before {
+  content: "▼ ";
+  font-size: 1rem;
+  color: #00d4ff;
+}
+
+.button-store {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-store button {
+  background: #0a0a0a;
+  color: #00d4ff;
+  border: 2px solid #1a1a1a;
+  padding: 12px 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.button-store button:hover {
+  background: #00d4ff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+#Cursed-Auto {
+  color: #b166ff;
+}
+
+#Cursed-Auto:hover {
+  color: #000;
+  background: #b166ff;
+  box-shadow: 0 0 20px rgba(177, 102, 255, 0.6);
+}
+
+.button-store button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.button-store button:hover::after {
+  transform: scaleX(1);
+}
